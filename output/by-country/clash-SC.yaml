@@ -5,29 +5,69 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇸🇨 塞舌尔 (Seychelles) 01 - xiaohe
-  server: hk3n.wxgqlfx.vip
-  port: 35193
+  server: 188.225.24.62
+  port: 443
   udp: true
   type: vless
-  uuid: 35cbae61-ee10-4cb9-abb8-4950b35e9851
+  uuid: c0c949fc-2ed6-4597-b680-a1a3276ebf87
+  flow: xtls-rprx-vision
+  tls: true
+  servername: img.bokovskay.app
+  skip-cert-verify: false
+  client-fingerprint: firefox
+- name: 🇸🇨 塞舌尔 (Seychelles) 02 - xiaohe
+  server: 188.225.24.192
+  port: 443
+  udp: true
+  type: vless
+  uuid: c0c949fc-2ed6-4597-b680-a1a3276ebf87
+  flow: xtls-rprx-vision
+  tls: true
+  servername: portal.bokovskay.app
+  skip-cert-verify: false
+  client-fingerprint: firefox
+- name: 🇸🇨 塞舌尔 (Seychelles) 03 - xiaohe
+  server: 196.196.148.90
+  port: 443
+  udp: true
+  type: vless
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
   flow: xtls-rprx-vision
   tls: true
   reality-opts:
-    public-key: d_pn_DMaIxhCkNh80h0Mc7nP94hrlN--I8liOIREDxE
-    short-id: e8daed2d
-  servername: www.apple.com
-  client-fingerprint: chrome
+    public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
+    short-id: 42426c882c5fcd41
+  servername: 7aa271t.es9.h1clayd.click
+  client-fingerprint: firefox
+- name: 🇸🇨 塞舌尔 (Seychelles) 04 - xiaohe
+  server: 46.29.255.123
+  port: 59539
+  udp: true
+  type: vless
+  uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ
+  servername: cloudflare-dns.com
+  client-fingerprint: firefox
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇸🇨 塞舌尔 (Seychelles) 01 - xiaohe
+  - 🇸🇨 塞舌尔 (Seychelles) 02 - xiaohe
+  - 🇸🇨 塞舌尔 (Seychelles) 03 - xiaohe
+  - 🇸🇨 塞舌尔 (Seychelles) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇸🇨 塞舌尔 (Seychelles) 01 - xiaohe
+  - 🇸🇨 塞舌尔 (Seychelles) 02 - xiaohe
+  - 🇸🇨 塞舌尔 (Seychelles) 03 - xiaohe
+  - 🇸🇨 塞舌尔 (Seychelles) 04 - xiaohe
 rules:
 - MATCH,PROXIES
